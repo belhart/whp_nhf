@@ -7,6 +7,8 @@
     {
         void CreateVersenyzo(Versenyzo versenyzo);
 
+        void CreateVersenyzo(int rajtszam, string nev, string csapatnev, int eletkor, int osszpont, int idenybelipont);
+
         new Versenyzo GetOne(int rajtSzam);
 
         new IQueryable<Versenyzo> GetAll();
@@ -21,6 +23,8 @@
 
         void UpdateIdenybeliPont(int rajtSzam, int newIdenybeliPont);
 
-        void Deleteversenyzo(int rajtSzam);
+        bool Deleteversenyzo(int rajtSzam);
+
+        bool UpdateVersenyzoTeljes(int rajtszam, string nev, string csapatnev, int eletkor, int osszpont, int idenybelipont);
     }
 }

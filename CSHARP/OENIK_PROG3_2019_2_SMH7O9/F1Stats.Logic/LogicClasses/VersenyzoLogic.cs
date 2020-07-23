@@ -29,14 +29,24 @@
             return this.versenyzoRepo.GetOne(rajtszam);
         }
 
-        public void DeleteVersenyzo(int rajtSzam)
+        public bool DeleteVersenyzo(int rajtSzam)
         {
-            this.versenyzoRepo.Deleteversenyzo(rajtSzam);
+            return this.versenyzoRepo.Deleteversenyzo(rajtSzam);
         }
 
         public void CreateVersenyzo(Versenyzo versenyzo)
         {
             this.versenyzoRepo.CreateVersenyzo(versenyzo);
+        }
+
+        public void CreateVersenyzo(int rajtszam, string nev, string csapatnev, int eletkor, int osszpont, int idenybelipont)
+        {
+            this.versenyzoRepo.CreateVersenyzo(rajtszam, nev, csapatnev, eletkor, osszpont, idenybelipont);
+        }
+
+        public bool UpdateVersenyzo(int rajtszam, string nev, string csapatnev, int eletkor, int osszpont, int idenybelipont)
+        {
+            return this.versenyzoRepo.UpdateVersenyzoTeljes(rajtszam, nev, csapatnev, eletkor, osszpont, idenybelipont);
         }
     }
 }
